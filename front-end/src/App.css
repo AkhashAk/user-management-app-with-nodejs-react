@@ -1,0 +1,111 @@
+.App {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 15px;
+}
+
+.main {
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+}
+
+.header-content {
+  margin-top: 110px; /* Adjust the value to match the height of your navigation bar */
+  z-index: 1; /* Lower z-index */
+  text-align: center;
+}
+
+.app-h2 {
+  text-align: center;
+}
+
+.form {
+  position: relative;
+  max-width: 40%;
+  padding: 2rem;
+  margin:auto;
+}
+
+.form label {
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form-h4 {
+  text-align: center;
+  color: green;
+}
+
+.search-filter-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-div {
+  margin-top: 2px;
+  position: sticky;
+  align-items: center;
+}
+.filter-div,
+.search-div {
+  flex: 1;
+}
+
+.custom-div {
+  height: 390px; /* Set a maximum height of 100 pixels */
+}
+.table {
+  position: relative;
+  max-width: 100%;
+  padding: 0.1rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.table-heading {
+  text-align: center;
+}
+
+.button-edit {
+  justify-content: center;
+}
+.btn-cancel {
+  margin-left: 33.3rem;
+}
+
+.btn {
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px #ccc;
+  font-size: 1rem;
+}
+
+.btn-open {
+  background-color: #1d4ed8;
+}
+
+.btn-create-cancel{
+  margin-left: 27.5rem;
+}
+
+.btn-1 {
+  float: left;
+}
+
+.btn-2 {
+  float: right;
+}
+
+.footer-pagination {
+  text-align: center;
+}
+
+.pending-btn {
+  border-color: #1d4ed8;
+}
