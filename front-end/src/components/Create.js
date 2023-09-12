@@ -29,6 +29,11 @@ const initialMessages = [
         type: "INVALID_EMAILID",
         message: "please enter valid email ID",
         color: "red"
+    },
+    {
+        type: "ADDED_USER",
+        message: "User created successfully!",
+        color: "green"
     }
 ];
 
@@ -49,6 +54,12 @@ const reducer = (state, action) => {
         case 'FORM_INCOMPLETE':
             return initialMessages.find(msg => {
                 if (msg.type === "FORM_INCOMPLETE") {
+                    return msg;
+                } else return null;
+            });
+        case 'ADDED_USER':
+            return initialMessages.find(msg => {
+                if (msg.type === "ADDED_USER") {
                     return msg;
                 } else return null;
             });
@@ -93,11 +104,9 @@ export default function Create() {
 
     const postData = async (e) => {
         e.preventDefault();
-        console.log(validateEmail(user.emailID));
         if (user.firstName !== null && user.firstName !== "" && user.emailID !== null && user.emailID !== "") {
             if (!validateEmail(user.emailID)) return dispatch({ type: "INVALID_EMAILID" });
             let allUsers = await axios.get(``);
-            console.log("all users =", allUsers);
             let isEmailIDPresent = allUsers.data.some(item => item.emailID === user.emailID);
             if (!isEmailIDPresent) {
                 await axios.post('', {
@@ -107,7 +116,10 @@ export default function Create() {
                     emailID: user.emailID,
                     checked: false
                 }).then(() => {
-                    navigate('/');
+                    dispatch({ type: "ADDED_USER" });
+                    setTimeout(() => {
+                        navigate('/');
+                    }, 2000);
                 }).catch((err) => {
                     console.log(err);
                     // alert("Error occured!")

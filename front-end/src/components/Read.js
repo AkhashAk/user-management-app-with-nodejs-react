@@ -53,44 +53,14 @@ export default function Read() {
             ...searchQuery,
             query: searchTerm
         });
-        // const filtered = [];
-        // const filtered = getFilteredUsers(searchTerm, filterSearch);
-        /*users.filter((item) => {
-            if (item[searchQuery.column].toLowerCase().includes(searchTerm.toLowerCase())) {
-                if (filterSearch === "Pending" && item.checked === false) {
-                    filtered.push(item);
-                } else if (filterSearch === "Completed" && item.checked === true) {
-                    filtered.push(item);
-                } else if (filterSearch === "") {
-                    filtered.push(item);
-                }
-            }
-        });*/
         setFilteredUsers(getFilteredUsers(searchTerm, filterSearch));
         setCurrentPage(1);
     }
 
     const handleFilterSearch = async (filterQuery) => {
         setFilterSearch(filterQuery);
-        // const res = await axios.get("");
         setFilteredUsers(getFilteredUsers(searchQuery.query, filterQuery));
         setCurrentPage(1);
-        /*switch (filterQuery) {
-            case "Pending":
-                const pendingUsers = users.filter(item => item[searchQuery.column].toLowerCase().includes(searchQuery.query.toLowerCase()) && item.checked === false);
-                setFilteredUsers(pendingUsers);
-                // console.log(pendingUsers.length, Math.ceil(((pendingUsers.length) - 1) / usersPerPage));
-                setCurrentPage(1);
-                break;
-            case "Completed":
-                const completedUsers = users.filter(item => item[searchQuery.column].toLowerCase().includes(searchQuery.query.toLowerCase()) && item.checked === true);
-                setFilteredUsers(completedUsers);
-                // setCurrentPage(completedUsers.length > 1 ? Math.ceil(((completedUsers.length))-1 / usersPerPage) : 1);
-                setCurrentPage(1);
-                break;
-            default:
-                break;
-        }*/
     }
 
     const handleSearchKeyPress = (e) => {
@@ -125,7 +95,6 @@ export default function Read() {
     }
 
     const updateUser = (user) => {
-        console.log("User =", user);
         setCurrentUser(user);
         setModalOpen(true);
     }

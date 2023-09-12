@@ -3,38 +3,112 @@
     display: flex;
     bottom: 0;
     left: 0;
-    padding-bottom: 10px; /* Optional: Add padding to the pagination div */
-    z-index: 1; /* Ensure the pagination appears above other content */
-    width: 100%; /* Optional: Adjust the width as needed */
+    /* Optional: Add padding to the pagination div */
+    z-index: 3;
+    /* Ensure the pagination appears above other content */
+    width: 100%;
+    /* Optional: Adjust the width as needed */
     justify-content: center;
     align-items: center;
 }
 
-.pagination-active{
+.pagination-active {
     background-color: #1d4ed8;
-}
-
-.nav-pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 0.5rem;
-    border-color: #172554;
-    color: white;
-    position: relative;
-    top: 0;
 }
 
 .nav-pagination ul {
     display: flex;
 }
 
+.pagination-button {
+    opacity: 1;
+    background-color: #fff;
+}
+
 .nav-pagination ul li {
-   list-style: none;
-   border-radius: 0.5rem;
+    list-style: none;
+    border-radius: 0.5rem;
+    opacity: 1;
 }
 
 .pagination__disable {
     opacity: 0;
     cursor: none;
+}
+
+.active-btn {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #274a9c;
+    border: 2px solid #274a9c;
+    border-radius: 0.3rem;
+    box-shadow: #274a9c 0 1px px 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: center;
+    min-height: 3rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin: 1px;
+    display: block;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: all, 0.5s;
+  }
+
+.btns {
+    align-items: center;
+    background-clip: padding-box;
+    border: 2px solid #274a9c;
+    border-radius: 0.3rem;
+    box-shadow: #274a9c 0 1px px 0;
+    box-sizing: border-box;
+    color: #000000;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: center;
+    margin: 0;
+    margin-top: 10px;
+    min-height: 3rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin: 1px;
+    display: block;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.btns:hover,
+.btns:focus {
+    transform: translateY(1px);
+    color: #ffffff;
+    background-color: #274a9c;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.btns:active {
+    background-color: #274a9c;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
 }
